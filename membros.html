@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Publicações · BIOTEC · UFPR</title>
-  <meta name="description" content="Publicações do Grupo BIOTEC — artigos, livros, teses — PPGD/UFPR">
+  <title>Membros · BIOTEC · UFPR</title>
+  <meta name="description" content="Membros do Grupo BIOTEC — pesquisadores, doutorandos e mestrandos — PPGD/UFPR">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
@@ -129,37 +129,63 @@
     }
 
     .pagina-corpo { width: 100%; background: var(--cor-fundo); }
-    .pagina-corpo .inner { padding-top: 1.5rem; padding-bottom: 2rem; }
-    .filtros { display: flex; gap: .75rem; flex-wrap: wrap; padding: 1rem 0; border-bottom: 0.5px solid var(--cor-borda); margin-bottom: 2rem; }
-    .filtro-btn { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 14px; border: 0.5px solid var(--cor-borda); background: transparent; color: var(--cor-texto-suave); cursor: pointer; }
+    .pagina-corpo .inner { padding-top: 2rem; padding-bottom: 3rem; }
+
+    /* filtros por categoria */
+    .filtros { display: flex; gap: .75rem; flex-wrap: wrap;
+               padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--cor-borda); margin-bottom: 2rem; }
+    .filtro-btn { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+                  padding: 5px 14px; border: 0.5px solid var(--cor-borda); background: transparent;
+                  color: var(--cor-texto-suave); cursor: pointer; }
     .filtro-btn.ativo { background: var(--cor-acento); color: #fff; border-color: var(--cor-acento); }
     .filtro-btn:hover { border-color: var(--cor-acento); color: var(--cor-acento); }
-    .busca-wrap { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.5rem; }
-    .busca-input-box { flex: 1; display: flex; align-items: center; gap: .75rem; border: 0.5px solid var(--cor-borda); padding: 0 14px; }
-    .busca-input-box:focus-within { border-color: var(--cor-acento); }
-    .busca-icone { width: 15px; height: 15px; stroke: var(--cor-texto-suave); fill: none; stroke-width: 1.5; stroke-linecap: round; flex-shrink: 0; }
-    .busca-input { font-family: var(--fonte-sans); font-size: 15px; font-weight: 400; color: var(--cor-texto); background: transparent; border: none; outline: none; padding: 10px 0; width: 100%; }
-    .busca-input::placeholder { color: var(--cor-texto-suave); }
-    .busca-limpar { font-size: 12px; font-weight: 500; color: var(--cor-texto-suave); background: none; border: none; cursor: pointer; padding: 4px 8px; display: none; }
-    .busca-limpar:hover { color: var(--cor-acento); }
-    .busca-contagem { font-size: 13px; color: var(--cor-texto-suave); white-space: nowrap; }
-    .sem-resultados { display: none; padding: 3rem 0; text-align: center; font-size: 15px; color: var(--cor-texto-suave); }
-    .pub-secao { margin-bottom: 2rem; }
-    .pub-item { display: grid; grid-template-columns: 48px 1fr; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 0.5px solid var(--cor-borda); align-items: start; }
-    .pub-item:last-child { border-bottom: none; }
-    .pub-ano { font-family: var(--fonte-serif); font-size: 15px; color: var(--cor-texto-suave); text-align: right; padding-top: 3px; }
-    .pub-badge { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cor-acento); border: 0.5px solid var(--cor-borda-acento); background: var(--cor-fundo-acento); padding: 2px 10px; margin-bottom: .5rem; }
-    .pub-titulo-item { font-family: var(--fonte-serif); font-size: 18px; font-weight: 400; line-height: 1.35; color: var(--cor-acento); margin-bottom: .4rem; }
-    .pub-titulo-item em { font-style: italic; }
-    .pub-autores-item { font-size: 13px; color: var(--cor-texto-suave); margin-bottom: .3rem; }
-    .pub-fonte { font-size: 13px; color: var(--cor-texto-suave); font-style: italic; margin-bottom: .5rem; }
-    .pub-links { display: flex; gap: 1rem; margin-top: .5rem; }
-    .pub-link { font-size: 12px; font-weight: 500; color: var(--cor-acento); letter-spacing: 0.04em; border-bottom: 0.5px solid var(--cor-acento); padding-bottom: 1px; }
-    .pub-link:hover { opacity: .7; text-decoration: none; }
-    .termo-destaque { background: #d4edda; color: #1a4a1a; border-radius: 2px; padding: 0 2px; }
+
+    /* grid de cards */
+    .membros-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+                    background: var(--cor-borda); border: 0.5px solid var(--cor-borda); }
+    .membro-card { background: var(--cor-fundo); padding: 2rem 1.75rem; display: flex;
+                   flex-direction: column; gap: .75rem; }
+    .membro-card:hover { background: var(--cor-fundo-acento); }
+
+    /* foto / iniciais */
+    .membro-avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover;
+                     border: 0.5px solid var(--cor-borda); flex-shrink: 0; }
+    .membro-iniciais-circulo { width: 72px; height: 72px; border-radius: 50%;
+                               border: 0.5px solid var(--cor-borda-acento);
+                               background: var(--cor-fundo-acento);
+                               display: flex; align-items: center; justify-content: center;
+                               font-family: var(--fonte-serif); font-size: 22px; font-weight: 400;
+                               color: var(--cor-acento); flex-shrink: 0; }
+
+    /* conteúdo do card */
+    .membro-categoria { font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+                        text-transform: uppercase; color: var(--cor-acento); }
+    .membro-nome-card { font-family: var(--fonte-serif); font-size: 20px; font-weight: 400;
+                        line-height: 1.2; color: var(--cor-texto); }
+    .membro-papel-card { font-size: 13px; color: var(--cor-texto-suave); line-height: 1.5; }
+    .membro-linha { width: 24px; height: 1px; background: var(--cor-borda-acento); }
+    .membro-areas { font-size: 13px; color: var(--cor-texto-suave); line-height: 1.6; }
+    .membro-links { display: flex; gap: 1rem; margin-top: .25rem; flex-wrap: wrap; }
+    .membro-link { font-size: 12px; font-weight: 500; color: var(--cor-acento);
+                   letter-spacing: 0.04em; border-bottom: 0.5px solid var(--cor-acento);
+                   padding-bottom: 1px; }
+    .membro-link:hover { opacity: .7; text-decoration: none; }
+
+    /* seção egressos */
+    .egressos-secao { margin-top: 3rem; padding-top: 2rem; border-top: 0.5px solid var(--cor-borda); }
+    .egressos-lista { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .egresso-item { padding: 1rem; border: 0.5px solid var(--cor-borda); }
+    .egresso-nome { font-family: var(--fonte-serif); font-size: 16px; color: var(--cor-texto); margin-bottom: 3px; }
+    .egresso-info { font-size: 13px; color: var(--cor-texto-suave); line-height: 1.5; }
+
+    @media (max-width: 1024px) {
+      .membros-grid { grid-template-columns: repeat(2, 1fr); }
+      .egressos-lista { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 768px) {
-      .pub-item { grid-template-columns: 40px 1fr; gap: 1rem; }
-      .pub-titulo-item { font-size: 16px; }
+      .membros-grid { grid-template-columns: 1fr; }
+      .egressos-lista { grid-template-columns: 1fr; }
+      .membro-card { padding: 1.5rem 1rem; }
     }
   </style>
 </head>
@@ -197,92 +223,185 @@
       <a href="index.html">Início</a>
       <a href="pesquisa.html">Pesquisa</a>
       <a href="eventos.html">Eventos</a>
-      <a href="membros.html">Membros</a>
-      <a href="publicacoes.html" class="ativo">Publicações</a>
+      <a href="membros.html" class="ativo">Membros</a>
+      <a href="publicacoes.html">Publicações</a>
       <a href="contato.html">Contato</a>
     </div>
   </nav>
 
   <div class="pagina-header">
     <div class="inner">
-      <div class="pagina-breadcrumb"><a href="index.html">Início</a> &rsaquo; Publicações</div>
-      <h1 class="pagina-titulo">Publicações</h1>
-      <p class="pagina-desc">Artigos, livros, capítulos de livro, teses e working papers produzidos pelos membros do Grupo BIOTEC. Substituir pelas publicações reais do grupo.</p>
+      <div class="pagina-breadcrumb"><a href="index.html">Início</a> &rsaquo; Membros</div>
+      <h1 class="pagina-titulo">Membros</h1>
+      <p class="pagina-desc">
+        O Grupo BIOTEC reúne pesquisadores em diferentes estágios da carreira acadêmica,
+        unidos pelo interesse nas interfaces entre direito, biotecnologia e sociedade.
+        Substituir pelos membros reais do grupo.
+      </p>
     </div>
   </div>
 
   <div class="pagina-corpo">
     <div class="inner">
 
-      <div class="busca-wrap">
-        <div class="busca-input-box">
-          <svg class="busca-icone" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
-          <input type="search" id="busca-input" class="busca-input" placeholder="Buscar por título, autor ou revista..." autocomplete="off">
-          <button id="busca-limpar" class="busca-limpar">Limpar</button>
-        </div>
-        <span id="busca-contagem" class="busca-contagem"></span>
-      </div>
-
+      <!-- filtros por categoria -->
       <div class="filtros">
-        <button class="filtro-btn ativo" data-tipo="todas">Todas</button>
-        <button class="filtro-btn" data-tipo="artigo">Artigos</button>
-        <button class="filtro-btn" data-tipo="livro">Livros</button>
-        <button class="filtro-btn" data-tipo="capítulo">Capítulos</button>
-        <button class="filtro-btn" data-tipo="tese">Teses</button>
-        <button class="filtro-btn" data-tipo="working paper">Working papers</button>
+        <button class="filtro-btn ativo" data-cat="todos">Todos</button>
+        <button class="filtro-btn" data-cat="coordenacao">Coordenação</button>
+        <button class="filtro-btn" data-cat="pesquisador">Pesquisadores</button>
+        <button class="filtro-btn" data-cat="doutorando">Doutorandos</button>
+        <button class="filtro-btn" data-cat="mestrando">Mestrandos</button>
       </div>
 
-      <div id="sem-resultados" class="sem-resultados">Nenhuma publicação encontrada para este filtro.</div>
+      <!-- grid de membros -->
+      <div class="membros-grid">
 
-      <div class="pub-secao">
-        <div class="separador">2025</div>
-        <div class="pub-item" data-tipo="artigo">
-          <div class="pub-ano">2025</div>
-          <div><span class="pub-badge">Artigo</span>
-            <div class="pub-titulo-item"><em>De statu hominis</em> — A condição jurídica da pessoa nos fragmentos do Digesto</div>
-            <div class="pub-autores-item">Ulpianus · Aemilius Papinianus</div>
-            <div class="pub-fonte">Digesta Iuris, vol. I, jan. 2025</div>
-            <div class="pub-links"><a href="publicacoes/de-statu-hominis-2025.pdf" class="pub-link">PDF</a><a href="#" class="pub-link">DOI</a><a href="#" class="pub-link">Lattes</a></div>
+        <!-- COORDENADOR 1 -->
+        <div class="membro-card" data-cat="coordenacao">
+          <div class="membro-iniciais-circulo">UL</div>
+          <!--
+            Para usar foto real, substitua o .membro-iniciais-circulo por:
+            <img src="imagens/membros/coordenador-1.jpg" alt="Nome" class="membro-avatar">
+          -->
+          <div class="membro-categoria">Coordenação</div>
+          <div class="membro-nome-card">Domitius Ulpianus</div>
+          <div class="membro-papel-card">
+            Professora Titular · Direito Civil<br>
+            PPGD — Programa de Pós-Graduação em Direito
+          </div>
+          <div class="membro-linha"></div>
+          <div class="membro-areas">
+            Áreas de pesquisa: autonomia jurídica, corpo e tecnociências,
+            regulação das biotecnologias, filosofia do direito privado.
+          </div>
+          <div class="membro-links">
+            <a href="#" class="membro-link">Lattes</a>
+            <a href="#" class="membro-link">ORCID</a>
+            <a href="mailto:biotec@ufpr.br" class="membro-link">E-mail</a>
           </div>
         </div>
-        <div class="pub-item" data-tipo="capítulo">
-          <div class="pub-ano">2025</div>
-          <div><span class="pub-badge">Capítulo</span>
-            <div class="pub-titulo-item"><em>Corpus et anima</em> — Subjetivação e regulação jurídica das biotecnologias</div>
-            <div class="pub-autores-item">Gaius Iulius Paulus</div>
-            <div class="pub-fonte">In: <em>Ius et Technologia</em>. Ed. Pandectae Novae, 2025</div>
-            <div class="pub-links"><a href="publicacoes/corpus-et-anima-2025.pdf" class="pub-link">PDF</a><a href="#" class="pub-link">Lattes</a></div>
+
+        <!-- COORDENADOR 2 -->
+        <div class="membro-card" data-cat="coordenacao">
+          <div class="membro-iniciais-circulo">AP</div>
+          <!--
+            Para usar foto real, substitua o .membro-iniciais-circulo por:
+            <img src="imagens/membros/coordenador-2.jpg" alt="Nome" class="membro-avatar">
+          -->
+          <div class="membro-categoria">Coordenação</div>
+          <div class="membro-nome-card">Aemilius Papinianus</div>
+          <div class="membro-papel-card">
+            Professor Associado · Teoria do Direito<br>
+            PPGD — Programa de Pós-Graduação em Direito
+          </div>
+          <div class="membro-linha"></div>
+          <div class="membro-areas">
+            Áreas de pesquisa: subjetivação jurídica, governamentalidade,
+            patrimonialização do corpo, direito e tecnociências.
+          </div>
+          <div class="membro-links">
+            <a href="#" class="membro-link">Lattes</a>
+            <a href="#" class="membro-link">ORCID</a>
+            <a href="mailto:biotec@ufpr.br" class="membro-link">E-mail</a>
           </div>
         </div>
+
+
+
+        <!-- MEMBRO 3: Pesquisadora -->
+        <div class="membro-card" data-cat="pesquisador">
+          <div class="membro-iniciais-circulo">GP</div>
+          <div class="membro-categoria">Pesquisadora</div>
+          <div class="membro-nome-card">Gaia Iulia Paula</div>
+          <div class="membro-papel-card">
+            Pesquisadora de pós-doutorado · PPGD/UFPR<br>
+            Bolsista CAPES
+          </div>
+          <div class="membro-linha"></div>
+          <div class="membro-areas">
+            Áreas de pesquisa: raça, gênero e colonialidade no direito,
+            vetores tecnológicos e exclusão, direito e feminismos.
+          </div>
+          <div class="membro-links">
+            <a href="#" class="membro-link">Lattes</a>
+            <a href="#" class="membro-link">Academia.edu</a>
+          </div>
+        </div>
+
+        <!-- MEMBRO 4: Doutorando -->
+        <div class="membro-card" data-cat="doutorando">
+          <div class="membro-iniciais-circulo">HM</div>
+          <div class="membro-categoria">Doutorando</div>
+          <div class="membro-nome-card">Herennius Modestinus</div>
+          <div class="membro-papel-card">
+            Doutorando · PPGD/UFPR<br>
+            Bolsista CNPq
+          </div>
+          <div class="membro-linha"></div>
+          <div class="membro-areas">
+            Tese: Nascimento, personalidade e tecnociências na tradição romanística.<br>
+            Orientadora: Domitius Ulpianus.
+          </div>
+          <div class="membro-links">
+            <a href="#" class="membro-link">Lattes</a>
+          </div>
+        </div>
+
+        <!-- MEMBRO 5: Doutoranda -->
+        <div class="membro-card" data-cat="doutorando">
+          <div class="membro-iniciais-circulo">SC</div>
+          <div class="membro-categoria">Doutoranda</div>
+          <div class="membro-nome-card">Servilia Claudia</div>
+          <div class="membro-papel-card">
+            Doutoranda · PPGD/UFPR<br>
+            Bolsista CAPES
+          </div>
+          <div class="membro-linha"></div>
+          <div class="membro-areas">
+            Tese: Privacidade genética e proteção de dados na jurisprudência brasileira.<br>
+            Orientadora: Domitius Ulpianus.
+          </div>
+          <div class="membro-links">
+            <a href="#" class="membro-link">Lattes</a>
+          </div>
+        </div>
+
+        <!-- MEMBRO 6: Mestrando -->
+        <div class="membro-card" data-cat="mestrando">
+          <div class="membro-iniciais-circulo">MF</div>
+          <div class="membro-categoria">Mestranda</div>
+          <div class="membro-nome-card">Marcia Flavia</div>
+          <div class="membro-papel-card">
+            Mestranda · PPGD/UFPR<br>
+            Bolsista CNPq
+          </div>
+          <div class="membro-linha"></div>
+          <div class="membro-areas">
+            Dissertação: Regulação da inteligência artificial e autonomia corporal.<br>
+            Orientadora: Aemilius Papinianus.
+          </div>
+          <div class="membro-links">
+            <a href="#" class="membro-link">Lattes</a>
+          </div>
+        </div>
+
       </div>
 
-      <div class="pub-secao">
-        <div class="separador">2024</div>
-        <div class="pub-item" data-tipo="artigo">
-          <div class="pub-ano">2024</div>
-          <div><span class="pub-badge">Artigo</span>
-            <div class="pub-titulo-item"><em>De rebus corporalibus et incorporalibus</em> — Corpo e patrimônio nas Institutas de Gaio</div>
-            <div class="pub-autores-item">Iulius Paulus</div>
-            <div class="pub-fonte">Pandectae Novae, fasc. III, 2024</div>
-            <div class="pub-links"><a href="publicacoes/de-rebus-corporalibus-2024.pdf" class="pub-link">PDF</a><a href="#" class="pub-link">DOI</a><a href="#" class="pub-link">Lattes</a></div>
+      <!-- egressos -->
+      <div class="egressos-secao">
+        <div class="separador">Egressos</div>
+        <div class="egressos-lista">
+          <div class="egresso-item">
+            <div class="egresso-nome">Gaius Cassius Longinus</div>
+            <div class="egresso-info">Doutor · 2023<br>Tese: <em>De corporis commodis</em><br>Professor na Universitas Paulistana</div>
           </div>
-        </div>
-        <div class="pub-item" data-tipo="tese">
-          <div class="pub-ano">2024</div>
-          <div><span class="pub-badge">Tese</span>
-            <div class="pub-titulo-item"><em>De liberis et postumis</em> — Nascimento, personalidade e tecnociências na tradição romanística</div>
-            <div class="pub-autores-item">Herennius Modestinus</div>
-            <div class="pub-fonte">Tese de doutoramento · PPGD/UFPR, 2024</div>
-            <div class="pub-links"><a href="publicacoes/tese-modestinus-2024.pdf" class="pub-link">PDF</a><a href="#" class="pub-link">Repositório UFPR</a></div>
+          <div class="egresso-item">
+            <div class="egresso-nome">Valeria Messalina</div>
+            <div class="egresso-info">Mestre · 2022<br>Dissertação: <em>Autonomia e gênero no direito civil</em><br>Defensora Pública · PR</div>
           </div>
-        </div>
-        <div class="pub-item" data-tipo="working paper">
-          <div class="pub-ano">2024</div>
-          <div><span class="pub-badge">Working paper</span>
-            <div class="pub-titulo-item"><em>Nemo tenetur se detegere</em> — Privacidade genética e proteção de dados na jurisprudência brasileira</div>
-            <div class="pub-autores-item">Domitius Ulpianus · Herennius Modestinus</div>
-            <div class="pub-fonte">Iurisprudentia Romana, t. VII, 2024</div>
-            <div class="pub-links"><a href="publicacoes/nemo-tenetur-2024.pdf" class="pub-link">PDF</a><a href="#" class="pub-link">SSRN</a></div>
+          <div class="egresso-item">
+            <div class="egresso-nome">Marcus Aurelius Cotta</div>
+            <div class="egresso-info">Doutor · 2021<br>Tese: <em>Corpus digitale et ius privatum</em><br>Pesquisador · FIOCRUZ</div>
           </div>
         </div>
       </div>
@@ -291,60 +410,18 @@
   </div>
 
 <script>
-  const btns = document.querySelectorAll('.filtro-btn');
-  const items = document.querySelectorAll('.pub-item');
-  const semRes = document.getElementById('sem-resultados');
-  const secoes = document.querySelectorAll('.pub-secao');
-  const buscaInput = document.getElementById('busca-input');
-  const buscaLimpar = document.getElementById('busca-limpar');
-  const buscaContagem = document.getElementById('busca-contagem');
-  let tipoAtivo = 'todas', termoBusca = '';
-
-  function textoItem(item) {
-    return ['.pub-titulo-item','.pub-autores-item','.pub-fonte']
-      .map(s => item.querySelector(s))
-      .filter(Boolean).map(el => el.textContent.toLowerCase()).join(' ');
-  }
-  function removerDestaques() {
-    items.forEach(item => {
-      ['.pub-titulo-item','.pub-autores-item'].forEach(s => {
-        const el = item.querySelector(s);
-        if (el) el.textContent = el.textContent;
+  const btns = document.querySelectorAll('.filtro-btn[data-cat]');
+  const cards = document.querySelectorAll('.membro-card');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('ativo'));
+      btn.classList.add('ativo');
+      const cat = btn.dataset.cat;
+      cards.forEach(card => {
+        card.style.display = (cat === 'todos' || card.dataset.cat === cat) ? '' : 'none';
       });
     });
-  }
-  function destacar(item, termo) {
-    const re = new RegExp('(' + termo.replace(/[.*+?^${}()|[\]\]/g,'\$&') + ')','gi');
-    ['.pub-titulo-item','.pub-autores-item'].forEach(s => {
-      const el = item.querySelector(s);
-      if (el) el.innerHTML = el.textContent.replace(re,'<mark class="termo-destaque">$1</mark>');
-    });
-  }
-  function aplicar() {
-    removerDestaques();
-    const termo = termoBusca.trim().toLowerCase();
-    let visiveis = 0;
-    items.forEach(item => {
-      const ok = (tipoAtivo === 'todas' || item.dataset.tipo === tipoAtivo) && (!termo || textoItem(item).includes(termo));
-      item.style.display = ok ? '' : 'none';
-      if (ok) { visiveis++; if (termo) destacar(item, termo); }
-    });
-    secoes.forEach(s => {
-      const alguma = Array.from(s.querySelectorAll('.pub-item')).some(i => i.style.display !== 'none');
-      s.style.display = alguma ? '' : 'none';
-    });
-    semRes.style.display = visiveis === 0 ? 'block' : 'none';
-    buscaContagem.textContent = visiveis < items.length ? visiveis + ' de ' + items.length + ' publicações' : '';
-    buscaLimpar.style.display = termo ? 'block' : 'none';
-  }
-  btns.forEach(btn => btn.addEventListener('click', () => {
-    btns.forEach(b => b.classList.remove('ativo'));
-    btn.classList.add('ativo');
-    tipoAtivo = btn.dataset.tipo;
-    aplicar();
-  }));
-  buscaInput.addEventListener('input', () => { termoBusca = buscaInput.value; aplicar(); });
-  buscaLimpar.addEventListener('click', () => { buscaInput.value = ''; termoBusca = ''; aplicar(); buscaInput.focus(); });
+  });
 </script>
 
   <footer>
