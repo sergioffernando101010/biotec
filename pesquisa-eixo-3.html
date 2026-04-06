@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato · BIOTEC · UFPR</title>
-  <meta name="description" content="Contato do Grupo BIOTEC · Direito, Biotecnologia e Sociedade · PPGD/UFPR">
+  <title>Raça, gênero e colonialidade · Pesquisa · BIOTEC · UFPR</title>
+  <meta name="description" content="Eixo 03 — Vetores tecnológicos, exclusão e direito colonial · Grupo BIOTEC · UFPR">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
@@ -128,23 +128,105 @@
       .rodape-base .inner { flex-direction: column; gap: 4px; text-align: center; }
     }
 
-    .pagina-corpo { width: 100%; background: var(--cor-fundo); }
-    .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-    .contato-col { padding: 2.5rem 2.5rem 2.5rem 0; border-right: 0.5px solid var(--cor-borda); }
-    .contato-col:last-child { border-right: none; padding-left: 2.5rem; padding-right: 0; }
-    .contato-bloco { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 0.5px solid var(--cor-borda); }
-    .contato-bloco:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .contato-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cor-acento-medio); margin-bottom: .75rem; }
-    .contato-titulo { font-family: var(--fonte-serif); font-size: 20px; font-weight: 400; color: var(--cor-texto); margin-bottom: .5rem; }
-    .contato-texto { font-size: 14px; color: var(--cor-texto-suave); line-height: 1.8; }
-    .contato-link { display: block; font-size: 14px; color: var(--cor-acento); margin-top: .4rem; }
-    .contato-link:hover { text-decoration: underline; }
-    .mapa-placeholder { background: var(--cor-fundo-acento); border: 0.5px solid var(--cor-borda-acento); height: 220px; display: flex; align-items: center; justify-content: center; margin-top: 1.5rem; }
-    .mapa-placeholder span { font-size: 13px; color: var(--cor-texto-suave); letter-spacing: 0.04em; }
+    /* hero do eixo */
+    .eixo-hero { width: 100%; border-bottom: 0.5px solid var(--cor-borda); }
+    .eixo-hero .inner { padding-top: 2.5rem; padding-bottom: 2.5rem;
+                        display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .eixo-num { font-family: var(--fonte-serif); font-size: 80px; font-weight: 400;
+                color: var(--cor-borda-acento); line-height: 1; margin-bottom: .5rem; }
+    .eixo-cat { font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+                text-transform: uppercase; color: var(--cor-acento); margin-bottom: .75rem; }
+    .eixo-titulo { font-family: var(--fonte-serif); font-size: 36px; font-weight: 400;
+                   line-height: 1.15; color: var(--cor-texto); margin-bottom: 1.25rem; }
+    .eixo-titulo em { font-style: italic; }
+    .eixo-intro { font-size: 16px; line-height: 1.85; color: var(--cor-texto-suave); }
+    .eixo-nav { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .eixo-nav a { font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
+                  text-transform: uppercase; padding: 7px 16px;
+                  border: 0.5px solid var(--cor-borda); color: var(--cor-texto-suave); }
+    .eixo-nav a:hover { border-color: var(--cor-acento); color: var(--cor-acento); text-decoration: none; }
+    .eixo-nav a.atual { background: var(--cor-acento); color: #fff; border-color: var(--cor-acento); }
+    .eixo-hero-aside { border-left: 2px solid var(--cor-acento); padding-left: 2rem; }
+    .aside-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+                   text-transform: uppercase; color: var(--cor-acento-medio); margin-bottom: 1rem; }
+    .aside-item { display: flex; gap: .75rem; padding: .75rem 0;
+                  border-bottom: 0.5px solid var(--cor-borda); align-items: baseline; }
+    .aside-item:last-child { border-bottom: none; }
+    .aside-bullet { width: 6px; height: 6px; background: var(--cor-acento);
+                    flex-shrink: 0; margin-top: 7px; }
+    .aside-texto { font-size: 14px; color: var(--cor-texto-suave); line-height: 1.6; }
+
+    /* seções de conteúdo */
+    .secao { width: 100%; border-bottom: 0.5px solid var(--cor-borda); }
+    .secao .inner { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    .secao-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .secao-titulo { font-family: var(--fonte-serif); font-size: 26px; font-weight: 400;
+                    color: var(--cor-texto); margin-bottom: 1.25rem; }
+    .secao-titulo em { font-style: italic; }
+    .secao-corpo { font-size: 15px; line-height: 1.9; color: var(--cor-texto-suave); }
+    .secao-corpo p + p { margin-top: 1rem; }
+
+    /* blocos de método */
+    .metodos-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px;
+                    background: var(--cor-borda); border: 0.5px solid var(--cor-borda); margin-top: 1.5rem; }
+    .metodo-item { background: var(--cor-fundo); padding: 1.5rem; }
+    .metodo-num { font-family: var(--fonte-serif); font-size: 28px; color: var(--cor-borda-acento);
+                  line-height: 1; margin-bottom: .5rem; }
+    .metodo-nome { font-size: 13px; font-weight: 500; color: var(--cor-acento);
+                   letter-spacing: 0.04em; margin-bottom: .5rem; }
+    .metodo-desc { font-size: 13px; color: var(--cor-texto-suave); line-height: 1.7; }
+
+    /* resultados */
+    .resultados-lista { margin-top: 1.5rem; }
+    .resultado-item { display: grid; grid-template-columns: 32px 1fr; gap: 1rem;
+                      padding: 1.25rem 0; border-bottom: 0.5px solid var(--cor-borda); align-items: start; }
+    .resultado-item:last-child { border-bottom: none; }
+    .resultado-icone { width: 32px; height: 32px; background: var(--cor-fundo-acento);
+                       border: 0.5px solid var(--cor-borda-acento);
+                       display: flex; align-items: center; justify-content: center;
+                       font-family: var(--fonte-serif); font-size: 14px; color: var(--cor-acento); }
+    .resultado-tipo { font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+                      text-transform: uppercase; color: var(--cor-acento); margin-bottom: 3px; }
+    .resultado-titulo { font-family: var(--fonte-serif); font-size: 17px; font-weight: 400;
+                        color: var(--cor-texto); line-height: 1.3; margin-bottom: 3px; }
+    .resultado-titulo em { font-style: italic; }
+    .resultado-detalhe { font-size: 13px; color: var(--cor-texto-suave); }
+
+    /* referências teóricas */
+    .referencias-secao { background: var(--cor-fundo-acento); width: 100%;
+                          border-top: 2px solid var(--cor-acento); }
+    .referencias-secao .inner { padding-top: 2rem; padding-bottom: 2rem; }
+    .refs-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    .ref-item { }
+    .ref-autor { font-family: var(--fonte-serif); font-size: 16px; font-weight: 400;
+                 color: var(--cor-texto); margin-bottom: 2px; }
+    .ref-obra { font-size: 13px; font-style: italic; color: var(--cor-texto-suave); margin-bottom: 2px; }
+    .ref-detalhe { font-size: 12px; color: var(--cor-texto-suave); }
+
+    /* próximo / anterior */
+    .eixo-paginacao { width: 100%; border-top: 0.5px solid var(--cor-borda); }
+    .eixo-paginacao .inner { display: flex; justify-content: space-between;
+                              padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .pag-link { display: flex; flex-direction: column; gap: 4px; }
+    .pag-link.direita { align-items: flex-end; }
+    .pag-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+                 text-transform: uppercase; color: var(--cor-texto-suave); }
+    .pag-titulo { font-family: var(--fonte-serif); font-size: 18px; color: var(--cor-acento); }
+    .pag-titulo:hover { text-decoration: underline; }
+
+    @media (max-width: 1024px) {
+      .eixo-hero .inner { grid-template-columns: 1fr; gap: 2rem; }
+      .secao-2col { grid-template-columns: 1fr; gap: 2rem; }
+      .metodos-grid { grid-template-columns: 1fr 1fr; }
+      .refs-grid { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 768px) {
-      .contato-grid { grid-template-columns: 1fr; }
-      .contato-col { padding: 1.5rem 0; border-right: none; border-bottom: 0.5px solid var(--cor-borda); }
-      .contato-col:last-child { border-bottom: none; }
+      .eixo-titulo { font-size: 26px; }
+      .eixo-num { font-size: 56px; }
+      .metodos-grid { grid-template-columns: 1fr; }
+      .refs-grid { grid-template-columns: 1fr 1fr; }
+      .eixo-paginacao .inner { flex-direction: column; gap: 1.5rem; }
+      .pag-link.direita { align-items: flex-start; }
     }
   </style>
 </head>
@@ -180,64 +262,179 @@
   <nav class="nav">
     <div class="inner">
       <a href="index.html">Início</a>
-      <a href="pesquisa.html">Pesquisa</a>
+      <a href="pesquisa.html" class="ativo">Pesquisa</a>
       <a href="eventos.html">Eventos</a>
       <a href="membros.html">Membros</a>
       <a href="publicacoes.html">Publicações</a>
-      <a href="contato.html" class="ativo">Contato</a>
+      <a href="contato.html">Contato</a>
     </div>
   </nav>
 
-  <div class="pagina-header">
+  <!-- HERO DO EIXO -->
+  <section class="eixo-hero">
     <div class="inner">
-      <div class="pagina-breadcrumb"><a href="index.html">Início</a> &rsaquo; Contato</div>
-      <h1 class="pagina-titulo">Contato</h1>
-      <p class="pagina-desc">Entre em contato com o Grupo BIOTEC para informações sobre pesquisas, parcerias, eventos ou participação como membro.</p>
+      <div>
+        <div class="eixo-num">03</div>
+        <div class="eixo-cat">Raça, gênero e colonialidade</div>
+        <h1 class="eixo-titulo">Vetores tecnológicos,<br>exclusão e <em>direito colonial</em></h1>
+        <p class="eixo-intro">Os vetores tecnológicos contemporâneos atualizam e materializam as questões de raça, gênero e colonialidade apagadas no direito europeu moderno. Examinamos como esses marcadores corporais de exclusão se tornam determinantes da construção de políticas de direitos.</p>
+        <div class="eixo-nav">
+          <a href="pesquisa.html">← Todos os eixos</a>
+          <a href="pesquisa-eixo-1.html" >Eixo 01</a>
+          <a href="pesquisa-eixo-2.html" >Eixo 02</a>
+          <a href="pesquisa-eixo-3.html" class="atual">Eixo 03</a>
+          <a href="pesquisa-eixo-4.html" >Eixo 04</a>
+        </div>
+      </div>
+      <div class="eixo-hero-aside">
+        <div class="aside-label">Conceitos-chave</div>
+        
+        <div class="aside-item">
+          <div class="aside-bullet"></div>
+          <div class="aside-texto">Colonialidade do poder e direito moderno</div>
+        </div>
+        <div class="aside-item">
+          <div class="aside-bullet"></div>
+          <div class="aside-texto">Marcadores raciais e tecnologia jurídica</div>
+        </div>
+        <div class="aside-item">
+          <div class="aside-bullet"></div>
+          <div class="aside-texto">Feminismos decoloniais e teoria do direito</div>
+        </div>
+        <div class="aside-item">
+          <div class="aside-bullet"></div>
+          <div class="aside-texto">Políticas de direitos e contradições da autonomia</div>
+        </div>
+        <div class="aside-item">
+          <div class="aside-bullet"></div>
+          <div class="aside-texto">Direito europeu moderno e apagamento colonial</div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="pagina-corpo">
+  <!-- EXPLICAÇÃO DA LINHA DE PESQUISA -->
+  <section class="secao">
     <div class="inner">
-      <div class="contato-grid">
-        <div class="contato-col">
-          <div class="contato-bloco">
-            <div class="contato-label">Endereço</div>
-            <div class="contato-titulo">Faculdade de Direito · UFPR</div>
-            <div class="contato-texto">Praça Santos Andrade, 50<br>Centro · Curitiba · PR · CEP 80020-300</div>
-            <div class="mapa-placeholder"><span>Mapa — inserir iframe Google Maps</span></div>
-          </div>
-          <div class="contato-bloco">
-            <div class="contato-label">E-mail</div>
-            <div class="contato-titulo">Fale conosco</div>
-            <a href="mailto:biotec@ufpr.br" class="contato-link">biotec@ufpr.br</a>
-          </div>
-          <div class="contato-bloco">
-            <div class="contato-label">Redes sociais e presença institucional</div>
-            <div class="contato-titulo">Siga e acesse o grupo</div>
-            <a href="https://www.instagram.com/seuperfil" target="_blank" rel="noopener" class="contato-link">Instagram · @biotec.ufpr</a>
-            <a href="https://www.direito.ufpr.br/portal/biotec/" target="_blank" rel="noopener" class="contato-link">Site institucional UFPR · Grupo BIOTEC</a>
-          </div>
+      <div class="separador">Linha de pesquisa</div>
+      <div class="secao-2col">
+        <div>
+          <h2 class="secao-titulo">Fundamentação teórica</h2>
+          <div class="secao-corpo"><p>Este eixo parte da crítica ao direito moderno europeu como projeto que apagou sistematicamente as questões de raça, gênero e colonialidade ao mesmo tempo em que as reproduzia sob outras formas. O direito privado — construído sobre a ficção do sujeito universal, abstrato e igual — é também o direito que naturalizou a escravidão, a subordinação das mulheres e a espoliação colonial.</p><p>Os vetores tecnológicos contemporâneos não rompem com essa herança: pelo contrário, atualizam e materializam as hierarquias coloniais em novos formatos — algoritmos que discriminam, biotecnologias que reproduzem desigualdades, dados que aprofundam exclusões.</p></div>
         </div>
-        <div class="contato-col">
-          <div class="contato-bloco">
-            <div class="contato-label">Coordenação</div>
-            <div class="contato-titulo">Coordenadora do Grupo</div>
-            <div class="contato-texto">Domitius Ulpianus<br>Professora Titular · Direito Civil<br>Programa de Pós-Graduação em Direito</div>
-            <a href="mailto:biotec@ufpr.br" class="contato-link">biotec@ufpr.br</a>
-          </div>
-          <div class="contato-bloco">
-            <div class="contato-label">Secretaria</div>
-            <div class="contato-titulo">Programa de Pós-Graduação em Direito</div>
-            <div class="contato-texto">Praça Santos Andrade, 50 · 1º andar<br>Centro · Curitiba · PR · CEP 80020-300<br>Segunda a sexta · 9h às 17h</div>
-            <a href="https://www.ppgd.ufpr.br" target="_blank" rel="noopener" class="contato-link">ppgd.ufpr.br</a>
-          </div>
-          <div class="contato-bloco">
-            <div class="contato-label">Pesquisadores e parcerias</div>
-            <div class="contato-titulo">Interesse em colaborar?</div>
-            <div class="contato-texto">Para informações sobre participação como membro, estágio de pesquisa, parcerias institucionais ou co-organização de eventos, entre em contato diretamente por e-mail informando sua instituição de vínculo e área de interesse.</div>
-            <a href="mailto:biotec@ufpr.br" class="contato-link">biotec@ufpr.br</a>
-          </div>
+        <div>
+          <h2 class="secao-titulo">Questões em investigação</h2>
+          <div class="secao-corpo"><p>As questões centrais deste eixo são: como o direito contemporâneo lida com o legado colonial que estrutura as desigualdades de raça e gênero? De que maneira as políticas de direitos — que invocam a autonomia como instrumento de reivindicação — reproduzem, paradoxalmente, a lógica que pretendem superar?</p><p>A pesquisa examina especialmente o campo das tecnologias reprodutivas, da saúde da mulher negra e das políticas de dados como arenas onde essas contradições se manifestam de forma mais aguda no contexto brasileiro.</p></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODOS -->
+  <section class="secao">
+    <div class="inner">
+      <div class="separador">Métodos e abordagens</div>
+      <div class="metodos-grid">
+        
+          <div class="metodo-item">
+            <div class="metodo-num">01</div>
+            <div class="metodo-nome">Pensamento decolonial</div>
+            <div class="metodo-desc">Mobilização da teoria decolonial latino-americana (Quijano, Lugones, Segato) para examinar como o direito moderno incorpora e reproduz hierarquias coloniais de raça e gênero.</div>
+          </div>
+          <div class="metodo-item">
+            <div class="metodo-num">02</div>
+            <div class="metodo-nome">Análise jurisprudencial crítica</div>
+            <div class="metodo-desc">Estudo das decisões do STF e STJ sobre direitos de populações indígenas, quilombolas e mulheres negras, examinando as contradições entre discurso de direitos e produção de exclusões.</div>
+          </div>
+          <div class="metodo-item">
+            <div class="metodo-num">03</div>
+            <div class="metodo-nome">Interseccionalidade</div>
+            <div class="metodo-desc">Uso da metodologia interseccional (Crenshaw, Collins) para analisar como raça, gênero e classe se articulam na regulação jurídica dos corpos.</div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="secao">
+    <div class="inner">
+      <div class="separador">Resultados e produções</div>
+      <div class="resultados-lista">
+        
+          <div class="resultado-item">
+            <div class="resultado-icone">A</div>
+            <div>
+              <div class="resultado-tipo">Artigo</div>
+              <div class="resultado-titulo">Colonialidade e autonomia reprodutiva no direito brasileiro</div>
+              <div class="resultado-detalhe">Gaia Iulia Paula · Iurisprudentia Romana, 2024</div>
+            </div>
+          </div>
+          <div class="resultado-item">
+            <div class="resultado-icone">C</div>
+            <div>
+              <div class="resultado-tipo">Capítulo</div>
+              <div class="resultado-titulo">Gênero, raça e biotecnologia: perspectivas decoloniais para o direito privado</div>
+              <div class="resultado-detalhe">Grupo BIOTEC · Ed. Pandectae Novae, 2025</div>
+            </div>
+          </div>
+          <div class="resultado-item">
+            <div class="resultado-icone">S</div>
+            <div>
+              <div class="resultado-tipo">Seminário</div>
+              <div class="resultado-titulo">Corpo, colonialidade e direito: diálogos com Rita Segato</div>
+              <div class="resultado-detalhe">PPGD/UFPR · março 2025</div>
+            </div>
+          </div>
+          <div class="resultado-item">
+            <div class="resultado-icone">P</div>
+            <div>
+              <div class="resultado-tipo">Parceria</div>
+              <div class="resultado-titulo">Rede Latino-Americana de Direito, Gênero e Colonialidade</div>
+              <div class="resultado-detalhe">2023–2026</div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERÊNCIAS TEÓRICAS -->
+  <section class="referencias-secao">
+    <div class="inner">
+      <div class="separador">Referências teóricas centrais</div>
+      <div class="refs-grid">
+        
+          <div class="ref-item">
+            <div class="ref-autor">María Lugones</div>
+            <div class="ref-obra">Colonialidad y género</div>
+            <div class="ref-detalhe">Tabula Rasa, 2008</div>
+          </div>
+          <div class="ref-item">
+            <div class="ref-autor">Rita Laura Segato</div>
+            <div class="ref-obra">La crítica de la colonialidad en ocho ensayos</div>
+            <div class="ref-detalhe">Prometeo, 2013</div>
+          </div>
+          <div class="ref-item">
+            <div class="ref-autor">Kimberlé Crenshaw</div>
+            <div class="ref-obra">Mapping the Margins</div>
+            <div class="ref-detalhe">Stanford Law Review, 1991</div>
+          </div>
+          <div class="ref-item">
+            <div class="ref-autor">Aníbal Quijano</div>
+            <div class="ref-obra">Colonialidad del poder y clasificación social</div>
+            <div class="ref-detalhe">CLACSO, 2000</div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGINAÇÃO ENTRE EIXOS -->
+  <div class="eixo-paginacao">
+    <div class="inner">
+      <div class="pag-link">
+        <span class="pag-label">Eixo anterior</span><a href="pesquisa-eixo-2.html" class="pag-titulo">← Subjetivação e tecnociências</a>
+      </div>
+      <div class="pag-link direita">
+        <span class="pag-label">Próximo eixo</span><a href="pesquisa-eixo-4.html" class="pag-titulo">Corpo digitalizado e IA →</a>
       </div>
     </div>
   </div>
